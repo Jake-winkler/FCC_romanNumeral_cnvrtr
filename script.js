@@ -3,6 +3,7 @@ const number = document.getElementById('number');
 const output = document.getElementById('output');
 
 button.addEventListener('click', (e) => {
+    e.preventDefault();
 
     if(number.value === ''){
         let result = document.createElement('p');
