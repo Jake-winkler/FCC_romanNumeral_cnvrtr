@@ -8,6 +8,8 @@ if(number.value == ''){
 createResultElementNoNum();
 }else if(number.value <=0){
     createNegResultElement();
+}else if( number.value >= 4000){
+    toLargeNumber();
 }else {
     convertNumToRoman();
 }
@@ -58,6 +60,19 @@ const createNegResultElement = () =>{
     console.log('NegValue');
 }
 
+const toLargeNumber = () =>{
+    let result = document.getElementById('resultID');
+    if(result !== null){
+        result.innerHTML = 'Please enter a number less than or equal to 3999';
+    }else{
+    let result = document.createElement('p');
+    result.setAttribute('id', 'resultID');
+    let node = document.createTextNode('Please enter a number less than or equal to 3999');
+    result.appendChild(node);
+    output.appendChild(result);
+    }
+    console.log('NegValue');
+}
 //this will be the function that gets triggered when a valid number is passed in to be converted to a roman number. 
 
 const convertNumToRoman = () => {
