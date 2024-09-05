@@ -45,8 +45,11 @@ const createNegResultElement = () =>{
     console.log('NegValue');
 }
 
+//this will be the function that gets triggered when a valid number is passed in to be converted to a roman number. 
 
 const convertNumToRoman = () => {
+
+    //the current if block can be removed later on.  this was just to test that the event handeler was working correctly. 
     let result = document.getElementById('resultID');
     if(result !== null){
         result.innerHTML = 'You have entered a Valid number!!!!';
