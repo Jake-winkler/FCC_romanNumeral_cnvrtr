@@ -13,6 +13,19 @@ createResultElementNoNum();
 }
 });
 
+number.addEventListener('keydown', (e) => {
+   if(e.key === 'Enter'){
+        e.preventDefault();
+        if(number.value == ''){
+        createResultElementNoNum();
+        }else if(number.value <=0){
+            createNegResultElement();
+        }else {
+            convertNumToRoman();
+        }
+   }
+});
+
 
 //This is the function to create the result element. 
 const createResultElementNoNum = () => {
