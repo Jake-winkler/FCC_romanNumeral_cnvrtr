@@ -2,6 +2,23 @@ const button = document.getElementById('convert-btn');
 const number = document.getElementById('number');
 const output = document.getElementById('output');
 
+const romanNumberMap = new Map();
+
+romanNumberMap.set('I', 1);
+romanNumberMap.set('IV', 4);
+romanNumberMap.set('V', 5);
+romanNumberMap.set('IX', 9);
+romanNumberMap.set('X', 10);
+romanNumberMap.set('XL', 40);
+romanNumberMap.set('L', 50);
+romanNumberMap.set('XC', 90);
+romanNumberMap.set('C', 100);
+romanNumberMap.set('CD', 400);
+romanNumberMap.set('D', 500);
+romanNumberMap.set('CM', 900);
+romanNumberMap.set('M', 1000);
+
+
 //this is the event handler that triggers off the button click 
 button.addEventListener('click', (e) => {
 if(number.value == ''){
@@ -90,5 +107,7 @@ const convertNumToRoman = () => {
     }
 
     console.log('Valid Value');
+    console.log(romanNumberMap);
 }
+
 
