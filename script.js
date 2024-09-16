@@ -28,7 +28,7 @@ createResultElementNoNum();
 }else if( number.value >= 4000){
     toLargeNumber();
 }else {
-    convertNumToRoman();
+    convertNumToRoman(number.value);
 }
 });
 
@@ -92,8 +92,10 @@ const toLargeNumber = () =>{
 }
 //this will be the function that gets triggered when a valid number is passed in to be converted to a roman number. 
 
-const convertNumToRoman = () => {
-
+const convertNumToRoman = num => {
+    romanNumberMap.forEach((value, key) => {
+        if(number.value )
+    })
     
 }
 
