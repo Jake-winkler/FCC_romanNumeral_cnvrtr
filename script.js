@@ -5,17 +5,11 @@ const output = document.getElementById('output');
 const romanNumberMap = new Map();
 
 romanNumberMap.set('I', 1);
-romanNumberMap.set('IV', 4);
 romanNumberMap.set('V', 5);
-romanNumberMap.set('IX', 9);
 romanNumberMap.set('X', 10);
-romanNumberMap.set('XL', 40);
 romanNumberMap.set('L', 50);
-romanNumberMap.set('XC', 90);
 romanNumberMap.set('C', 100);
-romanNumberMap.set('CD', 400);
 romanNumberMap.set('D', 500);
-romanNumberMap.set('CM', 900);
 romanNumberMap.set('M', 1000);
 
 
@@ -40,7 +34,7 @@ number.addEventListener('keydown', (e) => {
         }else if(number.value <=0){
             createNegResultElement();
         }else {
-            convertNumToRoman();
+            convertNumToRoman(number.value);
         }
    }
 });
@@ -92,11 +86,13 @@ const toLargeNumber = () =>{
 }
 //this will be the function that gets triggered when a valid number is passed in to be converted to a roman number. 
 
-const convertNumToRoman = num => {
+const convertNumToRoman = (num) => {
     romanNumberMap.forEach((value, key) => {
-        if(number.value )
+        if(num == value){
+            console.log(key);
+        }
     })
     
-}
+};
 
 
