@@ -15,26 +15,30 @@ romanNumberMap.set('M', 1000);
 
 //this is the event handler that triggers off the button click 
 button.addEventListener('click', (e) => {
+   let newNum = parseInt(number.value);
 if(number.value == ''){
 createResultElementNoNum();
-}else if(number.value <=0){
+}else if(newNum <=0){
     createNegResultElement();
-}else if( number.value >= 4000){
+}else if( newNum >= 4000){
     toLargeNumber();
 }else {
-    convertNumToRoman(number.value);
+    convertNumToRoman(newNum);
 }
 });
 
 number.addEventListener('keydown', (e) => {
+    let newNum = parseInt(number.value);
    if(e.key === 'Enter'){
         e.preventDefault();
         if(number.value == ''){
         createResultElementNoNum();
-        }else if(number.value <=0){
+        }else if(newNum <=0){
             createNegResultElement();
+        }else if( newNum >= 4000){
+                toLargeNumber();
         }else {
-            convertNumToRoman(number.value);
+            convertNumToRoman(newNum);
         }
    }
 });
@@ -84,13 +88,16 @@ const toLargeNumber = () =>{
     }
     console.log('NegValue');
 }
-//this will be the function that gets triggered when a valid number is passed in to be converted to a roman number. 
 
 const convertNumToRoman = (num) => {
+    // this will check the map and see if any input matches the value right away.
     romanNumberMap.forEach((value, key) => {
-        if(num == value){
+        if(num === value){
             console.log(key);
-        }
+            console.log(typeof num);
+            console.log(typeof value);
+
+        }//else if(num == )
     })
     
 };
